@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        window.onload = function () {
+         
+            var eNl = document.getElementById('nl');
+            eNl.addEventListener('click', function () { taalKeuze('nl') });
+
+            var eFr = document.getElementById('fr');
+            eFr.addEventListener('click', function () { taalKeuze('fr') });
+
+            var eEn = document.getElementById('en');
+            eEn.addEventListener('click', function () { taalKeuze('en') });
+
+            if (localStorage) {
+                console.log("Local storage OK");
+                if (localStorage.taal) {
+                    console.log("Local storage taal: " + localStorage.taal);
+                    var taal = localStorage.taal;
+                    switch (taal) {
+                        case 'nl':
+                            window.location = "../nederlands.html";
+                            break;
+                        case 'fr':
+                            window.location = "../francais.html";
+                            break;
+                        case 'en':
+                            window.location = "../english.html";
+                            break;
+                    }
+                }
+            }
+        }
+
+        function taalKeuze(taal) {
+            console.log("Local storage set taal: " + taal);
+            localStorage.setItem('taal', taal);
+        }
+    </script>
+    <div><a href="nederlands.html" id="nl"><img src="images/be.png" alt="Nederlands" /></a></div>
+    <div><a href="francais.html" id="fr"><img src="images/fr.png" alt="Francais" /></a></div>
+    <div><a href="english.html" id="en"><img src="images/en.png" alt="English" /></a></div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript" src="test.js">
+
+
+    </script>
+</head>
+<body>
+    <form>
+        <input type="text" name="voornaam" />
+        
+        <input type="submit" onclick="valideer(this)" />
+    </form>
+    <script type="text/javascript">
+
+        function valideer(o) {
+            if (o.voornaam != "jan") { return false; }
+        }
+
+    </script>
+
+</body>
+
+</html>
